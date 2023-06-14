@@ -1,3 +1,4 @@
+import os
 import gradio as gradio
 from fastai.vision.all import *
 import skimage
@@ -17,8 +18,8 @@ interpretation='default'
 enable_queue=True
 
 gradio.Interface(fn=predict,
-             inputs=gradio.inputs.Image(shape=(512, 512)),
-             outputs=gradio.outputs.Label(num_top_classes=3),
+             inputs=gradio.Image(shape=(512, 512)),
+             outputs=gradio.Label(num_top_classes=3),
              title=title,
              description=description,
              article=article,
